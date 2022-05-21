@@ -16,13 +16,19 @@ let pessoas = [
   {
     nome: 'mathias',
     valor: 10,
+    idade: 26,
   },
   {
     nome: 'luiz',
     valor: 20,
+    idade: 17,
   },
 ];
-
-pessoas = pessoas.sort((A, B) => B.valor - A.valor);
+// dois elementos ordenados de forma numérica
+pessoas = pessoas.sort((A, B) => {
+  const valorComparacaoA = (A.valor - A.idade) / 2;
+  const valorComparacaoB = (B.valor - B.idade) / 2;
+  return valorComparacaoB - valorComparacaoA;
+});
 
 console.log(pessoas);
